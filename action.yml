@@ -28,10 +28,10 @@ runs:
       with:
         node-version: 20
     - name: Download cli
-      run: wget ${{ inputs.cli-url }}
+      run: wget ${{ inputs.cli-url }} -O osdg
       shell: bash
     - name: download spec
-      run: cli download -u ${{ inputs.repo }} -o site
+      run: osdg download -u ${{ inputs.repo }} -o site
       shell: bash
     - name: Download Dependency
       working-directory: site
