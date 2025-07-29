@@ -33,7 +33,10 @@ runs:
     - run: chmod +x osdg
       shell: bash
     - name: download spec
-      run: ./osdg download -u ${{ inputs.repo }} -o site
+      run: ./osdg download -u ${{ inputs.repo }} -o docs
+      shell: bash
+    - name: generate spec
+      run: ./osdg generate -i docs -o site
       shell: bash
     - name: Download Dependency
       working-directory: site
