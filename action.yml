@@ -35,7 +35,7 @@ runs:
           #
           # You may remove this line if you want to manage the configuration yourself.
           static_site_generator: next
-          generator_config_file: ./site/next.config.mjs
+          generator_config_file: ./site/next.config.ts
     - name: Download cli
       run: wget ${{ inputs.cli-url }} -O osdg
       shell: bash
