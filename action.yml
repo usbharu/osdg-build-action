@@ -1,0 +1,41 @@
+name: "Build Document by openapi-static-document-generator"
+inputs:
+  repo:
+    description: openapi document repository
+    required: true
+  repo-token:
+    description: Personal Access Token for accessing a private repository
+    required: false
+  build-path:
+    required: false
+    default: "./out"
+    description: path to output directory
+  cli-url:
+    description: url to cli tool binary
+    required: false
+    default: "https://github.com/usbharu/openapi-static-document-generator/releases/download/v0.0.1/cli"
+runs:
+  using: composite
+
+  steps:
+    - name: checkout generator
+      uses: actions/checkout@v4
+      with:
+        repository: usbharu/openapi-static-document-generator
+    - name: setup node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: npm
+    - name: Download cli
+      run: wget ${{ inputs.cli-url }}
+      shell: bash
+    - name: download spec
+      run: cli download -u ${{ inputs.repo }} -o site
+      shell: bash
+    - name: Download Dependency
+      run: npm ci
+      shell: bash
+    - name: Download Dependency
+      run: npm run build
+      shell: bash
