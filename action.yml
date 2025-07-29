@@ -24,11 +24,9 @@ runs:
       with:
         repository: usbharu/openapi-static-document-generator
     - name: setup node.js
-      working-directory: site
       uses: actions/setup-node@v4
       with:
         node-version: 20
-        cache: npm
     - name: Download cli
       run: wget ${{ inputs.cli-url }}
       shell: bash
