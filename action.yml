@@ -35,8 +35,10 @@ runs:
       run: cli download -u ${{ inputs.repo }} -o site
       shell: bash
     - name: Download Dependency
+      working-directory: site
       run: npm ci
       shell: bash
     - name: Download Dependency
+      working-directory: site
       run: npm run build
       shell: bash
