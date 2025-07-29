@@ -1,4 +1,5 @@
-name: "Build Document by openapi-static-document-generator"
+name: "Build Document by osdg"
+description: "openapi-static-document-generator creates easy-to-read documentation for each version and definition from multiple OpenAPI definitions."
 inputs:
   repo:
     description: openapi document repository
