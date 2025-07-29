@@ -30,8 +30,10 @@ runs:
     - name: Download cli
       run: wget ${{ inputs.cli-url }} -O osdg
       shell: bash
+    - run: chmod +x osdg
+      shell: bash
     - name: download spec
-      run: osdg download -u ${{ inputs.repo }} -o site
+      run: ./osdg download -u ${{ inputs.repo }} -o site
       shell: bash
     - name: Download Dependency
       working-directory: site
