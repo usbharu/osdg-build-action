@@ -14,7 +14,7 @@ inputs:
   cli-url:
     description: url to cli tool binary
     required: false
-    default: "https://github.com/usbharu/openapi-static-document-generator/releases/download/v0.0.1/cli"
+    default: "https://github.com/usbharu/openapi-static-document-generator/releases/download/v0.1.0/cli"
   fron-ref:
     description: fromend repository ref
     required: false
