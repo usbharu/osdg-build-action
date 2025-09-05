@@ -28,7 +28,7 @@ runs:
         repository: usbharu/openapi-static-document-generator
         ref: ${{ inputs.fron-ref }}
     - name: setup node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v5
       with:
         node-version: 20
     - name: Setup Pages
